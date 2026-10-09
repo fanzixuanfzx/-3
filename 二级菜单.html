@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>二级下拉导航菜单</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="page-header">
+    <p class="eyebrow">CSS 实验 · 02</p>
+    <h1>二级下拉导航菜单</h1>
+    <p class="description">父级相对定位，子菜单绝对定位；悬停或键盘聚焦时展开。</p>
+  </header>
+
+  <main>
+    <nav class="navigation" aria-label="主导航">
+      <ul class="menu">
+        <li class="menu-item"><a href="#home">首页</a></li>
+        <li class="menu-item has-submenu">
+          <a href="#courses" aria-haspopup="true">课程中心 <span class="chevron" aria-hidden="true"></span></a>
+          <ul class="submenu">
+            <li><a href="#web">网页设计</a></li>
+            <li><a href="#programming">程序设计</a></li>
+            <li><a href="#database">数据库基础</a></li>
+          </ul>
+        </li>
+        <li class="menu-item has-submenu">
+          <a href="#resources" aria-haspopup="true">学习资源 <span class="chevron" aria-hidden="true"></span></a>
+          <ul class="submenu">
+            <li><a href="#materials">课件下载</a></li>
+            <li><a href="#exercises">在线练习</a></li>
+          </ul>
+        </li>
+        <li class="menu-item"><a href="#news">校园资讯</a></li>
+        <li class="menu-item"><a href="#about">关于我们</a></li>
+      </ul>
+    </nav>
+
+    <section class="demo-content" id="home">
+      <span class="section-number">02 / DROPDOWN MENU</span>
+      <h2>把相关入口收纳在一起</h2>
+      <p>将鼠标移到“课程中心”或“学习资源”上，或使用 Tab 键聚焦，即可查看二级菜单。子菜单定位在对应的一级菜单下方。</p>
+    </section>
+  </main>
+  <footer class="page-footer">HTML + CSS · 导航菜单实验</footer>
+</body>
+</html>
