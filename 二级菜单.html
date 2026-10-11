@@ -1,48 +1,126 @@
-<!doctype html>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>二级下拉导航菜单</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二级水平导航菜单</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            color: #203432;
+            background: #f2f6f5;
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+        }
+
+        body > ul:first-of-type {
+            margin: 0;
+            padding: 17px max(24px, calc((100% - 1120px) / 2));
+            list-style: none;
+            color: #fff;
+            background: #126b65;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        body > ul:nth-of-type(2) {
+            display: flex;
+            width: 100%;
+            margin: 0;
+            padding: 0 max(12px, calc((100% - 1120px) / 2));
+            list-style: none;
+            background: #fff;
+            box-shadow: 0 8px 20px rgb(16 59 56 / 10%);
+        }
+
+        body > ul:nth-of-type(2) > li {
+            position: relative;
+        }
+
+        body > ul:nth-of-type(2) a {
+            display: block;
+            padding: 17px 18px;
+            color: #203432;
+            font-size: 15px;
+            white-space: nowrap;
+            text-decoration: none;
+            transition: color 160ms ease, background-color 160ms ease;
+        }
+
+        body > ul:nth-of-type(2) > li > a:hover,
+        body > ul:nth-of-type(2) > li > a:focus-visible {
+            color: #fff;
+            background: #126b65;
+            outline: none;
+        }
+
+        body > ul:nth-of-type(2) > li > ul {
+            position: absolute;
+            z-index: 1;
+            top: 100%;
+            left: 0;
+            display: none;
+            min-width: 220px;
+            margin: 0;
+            padding: 6px 0;
+            list-style: none;
+            background: #fff;
+            box-shadow: 0 12px 24px rgb(16 59 56 / 16%);
+        }
+
+        body > ul:nth-of-type(2) > li:hover > ul,
+        body > ul:nth-of-type(2) > li:focus-within > ul {
+            display: block;
+        }
+
+        body > ul:nth-of-type(2) > li > ul a {
+            padding: 12px 16px;
+        }
+
+        body > ul:nth-of-type(2) > li > ul a:hover,
+        body > ul:nth-of-type(2) > li > ul a:focus-visible {
+            color: #126b65;
+            background: #e8f2f0;
+            outline: none;
+        }
+
+        @media (max-width: 760px) {
+            body > ul:first-of-type {
+                padding: 15px 18px;
+            }
+
+            body > ul:nth-of-type(2) {
+                overflow-x: auto;
+                padding: 0 8px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header class="page-header">
-    <p class="eyebrow">CSS 实验 · 02</p>
-    <h1>二级下拉导航菜单</h1>
-    <p class="description">父级相对定位，子菜单绝对定位；悬停或键盘聚焦时展开。</p>
-  </header>
-
-  <main>
-    <nav class="navigation" aria-label="主导航">
-      <ul class="menu">
-        <li class="menu-item"><a href="#home">首页</a></li>
-        <li class="menu-item has-submenu">
-          <a href="#courses" aria-haspopup="true">课程中心 <span class="chevron" aria-hidden="true"></span></a>
-          <ul class="submenu">
-            <li><a href="#web">网页设计</a></li>
-            <li><a href="#programming">程序设计</a></li>
-            <li><a href="#database">数据库基础</a></li>
-          </ul>
+    <ul>
+        <li class="logo">欢迎访问湖南文理学院</li>
+    </ul>
+    <ul>         
+        <li><a href="#">首页</a></li>
+        <li><a href="#">教学院(部)</a>
+            <ul>
+                <li><a href="#">计算机与电气工程学院</a></li>
+                <li><a href="#">芙蓉学院</a></li>
+            </ul>
         </li>
-        <li class="menu-item has-submenu">
-          <a href="#resources" aria-haspopup="true">学习资源 <span class="chevron" aria-hidden="true"></span></a>
-          <ul class="submenu">
-            <li><a href="#materials">课件下载</a></li>
-            <li><a href="#exercises">在线练习</a></li>
-          </ul>
-        </li>
-        <li class="menu-item"><a href="#news">校园资讯</a></li>
-        <li class="menu-item"><a href="#about">关于我们</a></li>
-      </ul>
-    </nav>
-
-    <section class="demo-content" id="home">
-      <span class="section-number">02 / DROPDOWN MENU</span>
-      <h2>把相关入口收纳在一起</h2>
-      <p>将鼠标移到“课程中心”或“学习资源”上，或使用 Tab 键聚焦，即可查看二级菜单。子菜单定位在对应的一级菜单下方。</p>
-    </section>
-  </main>
-  <footer class="page-footer">HTML + CSS · 导航菜单实验</footer>
+        <li><a href="#">党群机构</a></li>        
+        <li><a href="#">行政教辅机构</a></li>
+        <li><a href="#">教学科研</a></li>
+        <li><a href="#">招生就业</a></li>
+        <li><a href="#">国际交流</a></li>
+        <li><a href="#">数字图书馆</a></li>
+    </ul>    
 </body>
 </html>
